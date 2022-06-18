@@ -7,5 +7,17 @@ pipeline {
       }
     }
 
+    stage('codecompile') {
+      steps {
+        bat 'compile'
+      }
+    }
+
+    stage('codereview') {
+      steps {
+        bat 'pmd:pmd'
+      }
+    }
+
   }
 }
